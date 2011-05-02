@@ -9,6 +9,6 @@ https isn't supported right now so don't bother changing scheme
 this script requires rubygems and yaml gem
 
 sudo apt-get install rubygems
-sudo gem instal yaml
+sudo gem install yaml
 
 ruby rpraeda.rb
