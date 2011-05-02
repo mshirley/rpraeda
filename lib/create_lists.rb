@@ -1,4 +1,5 @@
 require 'lib/map_yaml'
+require 'lib/load_inv'
 
 def create_lists()
         db = load_inv()
