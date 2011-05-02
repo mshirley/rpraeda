@@ -11,3 +11,4 @@ this script requires rubygems and yaml gem
 sudo apt-get install rubygems
 sudo gem instal yaml
 
+ruby rpraeda.rb
