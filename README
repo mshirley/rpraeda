@@ -1,0 +1,13 @@
+Ruby implementation of Praeda
+
+http://www.foofus.net/?page_id=218
+
+modify rpraeda.rb and set server to the target host, port, etc...
+
+https isn't support right now so don't bother changing scheme
+
+this script requires rubygems and yaml gem
+
+sudo apt-get install rubygems
+sudo gem instal yaml
+
