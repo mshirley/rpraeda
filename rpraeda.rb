@@ -1,7 +1,11 @@
 #!/usr/bin/ruby
-require 'lib/include'
+require 'lib/create_lists'
+require 'lib/fetch'
+require 'lib/parse_options'
+
 
 #if not defined?(Ocra) # This app supports Ocra (https://github.com/larsch/ocra)
+
 create_lists()
 
 server = "localhost"
