@@ -4,7 +4,7 @@ http://www.foofus.net/?page_id=218
 
 modify rpraeda.rb and set server to the target host, port, etc...
 
-https isn't supported right now so don't bother changing scheme
+https is supported now, just change scheme to https from http
 
 this script requires rubygems and yaml gem
 
