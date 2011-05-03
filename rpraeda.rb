@@ -7,6 +7,7 @@ if not defined?(Ocra) # This app supports Ocra (https://github.com/larsch/ocra)
 
 targetlist, singletarget, port, projname, outfile = load_options(ARGV)
 idlist, namelist, versionlist, joblist = create_lists()
+#load_output(projname, outfile)
 
 scheme = "http" 
 jobdir = "./jobs"

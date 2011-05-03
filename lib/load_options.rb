@@ -7,15 +7,15 @@ def load_options(options)
 	port = ""
 	projname = ""
 	outfile = ""
-
 	opts = OptionParser.new do |opts|
+		opts.banner = "Usage: ./rbpraeda.rb -t <targetfile> -p <port> -n <project name> -o <output dir>"
 		opts.on("-t=","--targets=<targetfile>", "List of targets") do |val|
 			targets = val
 		end
 		opts.on("-s=", "--single=<host>", "Single target (overrides target list)") do |val|
 			singletarget = val
 		end
-		opts.on("-p=","--port=<port>", "Port to check") do |val|
+		opts.on("-p=","--port=<port>", "Port to check, this overrides existing ports specified in target list") do |val|
 			port = val
 		end
 		opts.on("-n=", "--name=<project name>", "Project name") do |val|
@@ -31,13 +31,13 @@ def load_options(options)
 	end
 	opts.parse(options)
 
+	# When a singletarget is specified on the cli it will override targetfile
 	if singletarget.empty?
 		targetlist = load_targets(targets)
 	else
 		targetlist = singletarget.to_s
 	end
 
-	#outputret = create_output(projname, outfile)
 
 	case
 	when targetlist.empty? || targetlist.include?("ERROR") & singletarget.empty?
@@ -49,14 +49,21 @@ def load_options(options)
 		puts opts
 		exit
 	when projname.empty?
-		puts "ERROR: Invalid project name"
-		puts opts
-		exit
+		projname = "praeda-#{Time.now.day}-#{Time.now.month}-#{Time.now.year}"
+		puts "No project name specified, using default: #{projname}"
 	when outfile.empty?
-		puts "ERROR: Invalid output file"
-		puts opts
-		exit	
+		outfile = "output.log"
+		puts "No output file specified, using default: #{outfile}"
 	end
+	
+	if projname.empty?
+                projname = "praeda-#{Time.now.day}-#{Time.now.month}-#{Time.now.year}"
+        end
+
+        if outfile.empty?
+                outfile = "output.log"
+        end
+
 
 	return [ targetlist, singletarget, port, projname, outfile ]
 end
