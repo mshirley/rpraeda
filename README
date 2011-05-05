@@ -2,13 +2,11 @@ Ruby implementation of Praeda
 
 http://www.foofus.net/?page_id=218
 
-modify rpraeda.rb and set server to the target host, port, etc...
-
-https is supported now, just change scheme to https from http
+https is supported now, just change scheme to https from http in rpraeda.rb
 
 this script requires rubygems and yaml gem
 
 sudo apt-get install rubygems
 sudo gem install yaml
 
-ruby rpraeda.rb
+ruby rpraeda.rb -h for options
