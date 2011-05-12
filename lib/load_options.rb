@@ -38,6 +38,15 @@ def load_options(options)
 		targetlist = singletarget.to_s
 	end
 
+	if projname.empty?
+		projname = "logs-#{Time.now.month}-#{Time.now.day}-#{Time.now.year}"
+		puts "Using default projname: #{projname}"
+        end
+
+        if outfile.empty?
+		outfile = "outfile-#{Time.now.month}-#{Time.now.day}-#{Time.now.year}.log"
+		puts "Using default outfile: #{outfile}"
+	end
 
 	case
 	when targetlist.empty? || targetlist.include?("ERROR") & singletarget.empty?
@@ -55,15 +64,6 @@ def load_options(options)
 		outfile = "output.log"
 		puts "No output file specified, using default: #{outfile}"
 	end
-	
-	if projname.empty?
-                projname = "praeda-#{Time.now.day}-#{Time.now.month}-#{Time.now.year}"
-        end
-
-        if outfile.empty?
-                outfile = "output.log"
-        end
-
 
 	return [ targetlist, singletarget, port, projname, outfile ]
 end
