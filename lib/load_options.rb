@@ -8,7 +8,7 @@ def load_options(options)
 	projname = ""
 	outfile = ""
 	opts = OptionParser.new do |opts|
-		opts.banner = "Usage: ./rbpraeda.rb -t <targetfile> -p <port> -n <project name> -o <output dir>"
+		opts.banner = "Usage: ./rbpraeda.rb -t <targetfile> -p <port> -n <project directory> -o <output file>"
 		opts.on("-t=","--targets=<targetfile>", "List of targets") do |val|
 			targets = val
 		end
