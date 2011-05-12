@@ -11,7 +11,7 @@ idlist, namelist, versionlist, joblist = create_lists()
 
 scheme = "http" 
 jobdir = "./jobs"
-verbose = false # true 
+verbose = true # false 
 
 puts "Setting up output dir..."
 load_output(projname, outfile)
