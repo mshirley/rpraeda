@@ -54,6 +54,6 @@ def load_options(options)
 		outfile = "outfile-#{Time.now.month}-#{Time.now.day}-#{Time.now.year}.log"
 		puts "Using default outfile: #{outfile}"
 	end
-
+	puts "outfile is #{outfile.class}"
 	return [ targetlist, singletarget, port, projname, outfile ]
 end
