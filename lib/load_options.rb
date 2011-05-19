@@ -47,13 +47,18 @@ def load_options(options)
 		puts "ERROR: Invalid port"
 		puts opts
 		exit
-	when projname.empty?
+	end
+
+	if projname.empty?
 		projname = "logs-#{Time.now.month}-#{Time.now.day}-#{Time.now.year}"
 		puts "Using default projname: #{projname}"
-	when outfile.empty?
+	end
+	
+	if outfile.empty?
 		outfile = "outfile-#{Time.now.month}-#{Time.now.day}-#{Time.now.year}.log"
 		puts "Using default outfile: #{outfile}"
 	end
-	puts "outfile is #{outfile.class}"
+
+	puts "outfile is #{outfile}"
 	return [ targetlist, singletarget, port, projname, outfile ]
 end

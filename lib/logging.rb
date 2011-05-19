@@ -4,7 +4,7 @@ def write_log(projname, outfile, verbose, message)
 		if verbose == true
 			puts "[#{Time.now}]" + " " + message
 		end
-		file.close
+	file.close
 	}
 end
 

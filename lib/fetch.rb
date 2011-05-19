@@ -2,7 +2,6 @@ require 'net/http'
 require 'net/https'
 
 def fetch(scheme, host, port, path)
-
         if port.nil?
                 port = 80
         end
@@ -11,11 +10,21 @@ def fetch(scheme, host, port, path)
 	url = scheme + "://" + host + ":#{port}" + path
 	url = URI.parse(url)
 	http = Net::HTTP.new(url.host, url.port)
+	http.read_timeout = 500
 	if scheme == "https"    
 		http.use_ssl = true
 		http.verify_mode = OpenSSL::SSL::VERIFY_NONE
         end
-	result = http.request(Net::HTTP::Get.new(url.request_uri))
+
+	begin
+		result = Timeout::timeout(10) { http.request(Net::HTTP::Get.new(url.request_uri)) }
+	rescue Timeout::Error
+		result = "ERROR: Fetch timeout"
+	rescue Errno::ECONNREFUSED
+		result = "ERROR: Connection refused"
+	else
+	end
+
 	return result
 #
 # future
