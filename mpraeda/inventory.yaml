@@ -1,0 +1,117 @@
+--- 
+- - name: HP Color LaserJet CM6040 MFP Series
+    jobs: ""
+    id: P000001
+    version: |
+      HP-ChaiSOE/1.0
+
+- - name: HP Color LaserJet CP4005 Printers
+    jobs: MP0001,
+    id: P000002
+    version: HP-ChaiSOE/1.0
+- - name: hp LaserJet 4250
+    jobs: ""
+    id: P000003
+    version: |
+      HP-ChaiSOE/1.0
+
+- - name: HP Color LaserJet 4700 Printers
+    jobs: MP0001,
+    id: P000004
+    version: HP-ChaiSOE/1.0
+- - name: HP Color LaserJet CP3525 Printers
+    jobs: MP0002,
+    id: P000005
+    version: HP-ChaiSOE/1.0
+- - name: HP Color LaserJet CP3505 Printers
+    jobs: MP0002,
+    id: P000006
+    version: HP-ChaiSOE/1.0
+- - name: ""
+    jobs: MP0003,MP0004,MP0005,
+    id: P000007
+    version: Canon Http Server 2.10
+- - name: ""
+    jobs: MP0003,MP0004,MP0005,
+    id: P000008
+    version: Canon Http Server 2.11
+- - name: Home - Phaser 7750GX
+    jobs: MP0006,
+    id: P000009
+    version: Allegro-Software-RomPager/4.10
+- - name: Unauthorized
+    jobs: MP0006,
+    id: P000010
+    version: Spyglass_MicroServer/2.01FC1
+- - name: Principal
+    jobs: MP0006,
+    id: P000011
+    version: Spyglass_MicroServer/2.01FC1
+- - name: Home
+    jobs: MP0006,
+    id: P000012
+    version: Spyglass_MicroServer/2.01FC1
+- - name: Home - Phaser 6360DT
+    jobs: MP0006,
+    id: P000013
+    version: Allegro-Software-RomPager/4.34
+- - name: TopAccess
+    jobs: MP0007,
+    id: P000014
+    version: TOSHIBA TEC CORPORATION
+- - name: XEROX WORKCENTRE PRO - Status
+    jobs: MP0008,
+    id: P000015
+    version: Xerox_MicroServer/Xerox11
+- - name: XEROX WORKCENTRE - Status
+    jobs: MP0008,
+    id: P000016
+    version: Xerox_MicroServer/Xerox11
+- - name: ""
+    jobs: MP0003,MP0009,MP0010,
+    id: P000017
+    version: CANON HTTP Server Ver2.30
+- - name: HP Officejet 6500 E709a
+    jobs: MP0011,
+    id: P000018
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Officejet 6500 E709n
+    jobs: MP0011,
+    id: P000019
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Photosmart C6200 series
+    jobs: MP0011,
+    id: P000020
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Officejet Pro 8500 A909n
+    jobs: MP0011,
+    id: P000021
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Officejet Pro 8500 A909a
+    jobs: MP0011,
+    id: P000022
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Officejet Pro L7500
+    jobs: MP0011,
+    id: P000023
+    version: Virata-EmWeb/R6_2_1
+- - name: HP Officejet Pro L7600
+    jobs: MP0011,
+    id: P000024
+    version: Virata-EmWeb/R6_2_1
+- - name: ""
+    jobs: MP0003,MP0009,MP0010,
+    id: P000025
+    version: CANON HTTP Server Ver2.21
+- - name: ""
+    jobs: MP0003,MP0004,MP0005,
+    id: P000026
+    version: CANON HTTP Server
+- - name: Riverbed Technology, Inc.
+    jobs: MA0001,
+    id: A000001
+    version: Apache
+- - name: EMC Celerra Network Server
+    jobs: MA0002,
+    id: A000002
+    version: Apache
