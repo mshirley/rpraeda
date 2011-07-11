@@ -1,0 +1,55 @@
+this is the praeda metasploit module.
+
+you can either copy mpraeda.rb to msf3/modules/auxiliary/scanner/http or create a similar directory in ~/.msf3/modules/auxiliary/scanner/http and copy it there.
+
+this script also uses some config files that it loads at start.
+
+copy *.yaml to msf3/data or specify locations with YAML_INV_CONFIG and YAML_JOB_CONFIG
+
+start msfconsole
+
+msf > use auxiliary/scanner/http/mpraeda
+msf auxiliary(mpraeda) > set RHOSTS localhost
+RHOSTS => localhost
+msf auxiliary(mpraeda) > run
+[*] connecting: http://127.0.0.1:80/
+[*] 
+[*] 127.0.0.1 matches Canon Http Server 2.10
+[*] execting job MP0003
+this is a test
+[*] execting job MP0004
+this is another test
+[*] execting job MP0005
+[*] Scanned 1 of 1 hosts (100% complete)
+[*] Auxiliary module execution completed
+
+
+msf auxiliary(mpraeda) > info
+
+       Name: mpraeda -- Remote Printer Exploitation Module
+     Module: auxiliary/scanner/http/mpraeda
+    Version: 0.01a
+    License: Metasploit Framework License (BSD)
+       Rank: Normal
+
+Provided by:
+  Foofus.net Deral Heiland aka percX
+  mshirley
+
+Basic options:
+  Name             Current Setting                          Required  Description
+  ----             ---------------                          --------  -----------
+  RHOSTS                                                    yes       The target address range or CIDR identifier
+  SCHEME           http                                     yes       Scheme to use, select http or https
+  THREADS          1                                        yes       The number of concurrent threads
+  YAML_INV_CONFIG  /home/mshirley/msf3/data/inventory.yaml  yes       Full path to YAML Inventory Config file
+  YAML_JOB_CONFIG  /home/mshirley/msf3/data/jobs.yaml       yes       Full path to YAML Job Config File
+
+Description:
+  This module is a port of the praeda tool to remotely exploit common 
+  MFP devices with insecure settings leading to information 
+  disclosure.
+
+References:
+ http://www.foofus.net/?page_id=218
+
