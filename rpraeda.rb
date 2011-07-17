@@ -38,7 +38,9 @@ targetlist.each { |target|
 	jobarray = jobs.split(",").uniq
 	jobarray.each { |job| 
 		write_log(projname, outfile, verbose, "Executing job #{job} against #{target}")
-		load("#{jobdir}/#{job}.rb") 
+		jobfile = File.read("#{jobdir}/#{job}.rb")
+		eval(jobfile)
+# 		load("#{jobdir}/#{job}.rb") 
 	}
 }
 

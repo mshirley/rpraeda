@@ -28,7 +28,7 @@
     id: P000006
     version: HP-ChaiSOE/1.0
 - - name: ""
-    jobs: MP0003,MP0004,MP0005,
+    jobs: MA0001,MP0003,MP0004,MP0005,
     id: P000007
     version: Canon Http Server 2.10
 - - name: ""
