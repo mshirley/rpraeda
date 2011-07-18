@@ -100,6 +100,7 @@ class Metasploit3 < Msf::Auxiliary
 		response = fetch(datastore['SCHEME'], targethost, datastore['RPORT'], "/") 
 		if !response.respond_to?("body")
 			print_status("#{response}")
+			exit
 		end
 		versionlist.each_with_index.select { |version,i|
                 	if response['Server'] == version and response['Title'] == namelist[i]
