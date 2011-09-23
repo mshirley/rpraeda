@@ -23,25 +23,25 @@ puts "Current targets:"
 puts targetlist
 
 targetlist.each { |target|
-	write_log(projname, outfile, verbose, "Scanning #{target}")
-	response = fetch(scheme, target, port, "/")
-	if !response.respond_to?("body")
-		write_log(projname, outfile, verbose, response)
-	end
-	jobs = "" 
-	versionlist.each_with_index.select { |version,i| 
-		if response['Server'] == version and response['Title'] == namelist[i]
-			write_log(projname, outfile, verbose, "Match Found for #{target} to #{idlist[i]} #{namelist[i]}")
-			jobs << joblist[i]	
-		end 
-	}.map(&:last)
-	jobarray = jobs.split(",").uniq
-	jobarray.each { |job| 
-		write_log(projname, outfile, verbose, "Executing job #{job} against #{target}")
-		jobfile = File.read("#{jobdir}/#{job}.rb")
-		eval(jobfile)
-# 		load("#{jobdir}/#{job}.rb") 
-	}
+  write_log(projname, outfile, verbose, "Scanning #{target}")
+  response = fetch(scheme, target, port, "/")
+  if !response.respond_to?("body")
+    write_log(projname, outfile, verbose, response)
+  end
+  jobs = "" 
+  versionlist.each_with_index.select { |version,i| 
+    if response['Server'] == version and response['Title'] == namelist[i]
+      write_log(projname, outfile, verbose, "Match Found for #{target} to #{idlist[i]} #{namelist[i]}")
+      jobs << joblist[i]  
+    end 
+  }.map(&:last)
+  jobarray = jobs.split(",").uniq
+  jobarray.each { |job| 
+    write_log(projname, outfile, verbose, "Executing job #{job} against #{target}")
+    jobfile = File.read("#{jobdir}/#{job}.rb")
+    eval(jobfile)
+#     load("#{jobdir}/#{job}.rb") 
+  }
 }
 
 end # Ocra end, leave this
